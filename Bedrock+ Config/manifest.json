@@ -1,0 +1,42 @@
+{
+	"format_version": 2,
+	"header": {
+		"uuid": "90094cc2-3967-498a-bccf-d4247208e753",
+		"name": "Bedrock+ Config §bRelease§r §cv1§r",
+		"description": "(c) 2022 Bedrock+\nmade by chyves for Bedrock+ §cv3§r",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"subpacks": [
+		{
+			"folder_name": "light",
+			"name": "Light Mode",
+			"memory_tier": 1
+		},
+		{
+			"folder_name": "dark",
+			"name": "Dark Mode",
+			"memory_tier": 1
+		}
+	],
+	"modules": [
+		{
+			"description": "CHYVES",
+			"type": "resources",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"uuid": "0b944b31-021c-4792-81e0-28df140c2216"
+		}
+	]
+}

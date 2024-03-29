@@ -1,0 +1,9 @@
+{
+    "namespace": "bedrockplus_modules",
+
+    "config": {
+        "type": "panel"
+
+        /* MODULES */
+    }
+}

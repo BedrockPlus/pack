@@ -1,0 +1,10 @@
+{
+    "namespace": "bedrockplus_theme",
+
+    "config": {
+        "type": "panel",
+
+        /* THEMES */
+        "$bp_menu_bg_color": [0.180392157, 0.180392157, 0.196078431, 1]
+    }
+}
