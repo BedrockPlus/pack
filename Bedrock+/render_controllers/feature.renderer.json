@@ -1,0 +1,61 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.chyves_fps_counter": {
+            "geometry": "geometry.fps_counter",
+            "materials": [
+                {
+                    "*": "material.trirender"
+                }
+            ],
+            "textures": [
+                "array.c1[variable.fps]",
+                "array.c2[variable.fps/10]",
+                "array.c3[variable.fps/100]"
+            ],
+            "filter_lighting": true,
+            "ignore_lighting": true,
+            "light_color_multiplier": 1.5,
+            "arrays": {
+                "textures": {
+                    "array.c1": [
+                        "texture.c1_num0",
+                        "texture.c1_num1",
+                        "texture.c1_num2",
+                        "texture.c1_num3",
+                        "texture.c1_num4",
+                        "texture.c1_num5",
+                        "texture.c1_num6",
+                        "texture.c1_num7",
+                        "texture.c1_num8",
+                        "texture.c1_num9"
+                    ],
+                    "array.c2": [
+                        "texture.c2_num0",
+                        "texture.c2_num1",
+                        "texture.c2_num2",
+                        "texture.c2_num3",
+                        "texture.c2_num4",
+                        "texture.c2_num5",
+                        "texture.c2_num6",
+                        "texture.c2_num7",
+                        "texture.c2_num8",
+                        "texture.c2_num9"
+                    ],
+                    "array.c3": [
+                        "texture.c3_num0",
+                        "texture.c3_num1",
+                        "texture.c3_num2",
+                        "texture.c3_num3",
+                        "texture.c3_num4",
+                        "texture.c3_num5",
+                        "texture.c3_num6",
+                        "texture.c3_num7",
+                        "texture.c3_num8",
+                        "texture.c3_num9"
+                    ]
+                }
+            }
+        }
+    }
+}

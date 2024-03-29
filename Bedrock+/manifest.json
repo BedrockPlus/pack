@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"uuid": "25b34071-42ba-45c5-bb3b-1857822cc49f",
+		"name": "Bedrock+ §bRelease§r §cv3§r",
+		"description": "(c) 2022 Bedrock+\nmade by chyves",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "CHYVES",
+			"type": "resources",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"uuid": "cd950b5d-c623-421d-b6f5-b9ad536e81ed"
+		}
+	]
+}

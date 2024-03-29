@@ -1,0 +1,184 @@
+{
+	"pause_screen@common.base_screen": {
+		"force_render_below": true,
+		"gamepad_cursor": true,
+		"variables": [
+			{
+				"requires": "$ignore_edu_pause",
+				"$screen_content": "pause.bp_panel"
+			},
+			{
+				"requires": "(not $ignore_edu_pause)",
+				"$screen_content": "pause.bp_panel"
+			}
+		],
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_cancel",
+				"to_button_id": "button.menu_continue",
+				"mapping_type": "global"
+			},
+			{
+				"from_button_id": "button.controller_start",
+				"to_button_id": "button.menu_continue",
+				"mapping_type": "global"
+			},
+			{
+				"from_button_id": "button.menu_vr_realign",
+				"to_button_id": "button.menu_vr_realign",
+				"mapping_type": "global",
+				"scope": "controller"
+			},
+			{
+				"from_button_id": "button.controller_select",
+				"to_button_id": "button.to_profile_or_skins_screen",
+				"mapping_type": "global",
+				"scope": "controller"
+			},
+			{
+				"from_button_id": "button.menu_tab_left",
+				"to_button_id": "button.menu_tab_left",
+				"mapping_type": "global",
+				"scope": "view"
+			},
+			{
+				"from_button_id": "button.menu_tab_right",
+				"to_button_id": "button.menu_tab_right",
+				"mapping_type": "global",
+				"scope": "view"
+			}
+		]
+	},
+	"bp_panel": {
+		"type": "panel",
+		"size": [
+			"100%",
+			"100%"
+		],
+		"controls": [
+			{
+				"panel": {
+					"type": "panel",
+					"size": [
+						"100%",
+						"100%"
+					],
+					"controls": [
+						{
+							"pause_screen_content@pause_screen_content": {
+								"bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "chyves_hide_menu2",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ]
+							}
+						}
+					],
+					"bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			},
+			{
+				"open_toggles@open_toggles": {}
+			}
+		]
+	},
+	"open_toggles": {
+		"type": "stack_panel",
+		"size": [
+			"100%c",
+			24
+		],
+		"orientation": "horizontal",
+		"anchor_from": "top_left",
+		"anchor_to": "top_left",
+		"offset": [
+			5,
+			5
+		],
+		"controls": [
+			{
+				"module@hud_modules.toggle_double": {
+					"size": [
+						96,
+						24
+					],
+					"$button_text": "Toggle Menu §b(2x)",
+					"$toggle_group_forced_index": 2,
+					"$default_selector_toggle_index": 1,
+                    "$radio_toggle_group": false,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu2",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+					"$toggle_name": "show_panel_button",
+                    "$tab_view_binding_name": "chyves_hide_menu"
+				}
+			},
+			{
+				"buffer": {
+					"type": "panel",
+					"size": [102, 24],
+					"bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu2",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			},
+			{
+				"buffer2": {
+					"type": "panel",
+					"size": [6, 24],
+					"bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu2",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			},
+			{
+				"edit_menu@hud_modules.toggle_double": {
+					"size": [
+						96,
+						24
+					],
+					"$button_text": "Edit HUD §b(2x)",
+					"$tab_view_binding_name": "chyves_hide_menu2",
+                    "$toggle_name": "show_panel_button",
+                    "$toggle_group_forced_index": 3,
+                    "$toggle_group_default_selected": "$default_selector_toggle_index",
+                    "$default_selector_toggle_index": 1,
+                    "$radio_toggle_group": false,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			}
+		]
+	}
+}

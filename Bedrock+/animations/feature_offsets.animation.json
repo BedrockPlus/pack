@@ -1,0 +1,18 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.chyves.feature_offsets": {
+            "loop": true,
+            "bones": {
+                "y": {
+                    "rotation": [
+                        "(query.is_gliding ? -query.body_x_rotation + -90)",
+                        "(query.is_gliding ? -query.body_y_rotation) + (query.is_riding ? query.target_y_rotation)",
+                        0
+                    ],
+                    "scale": 5.2103
+                }
+            }
+        }
+    }
+}

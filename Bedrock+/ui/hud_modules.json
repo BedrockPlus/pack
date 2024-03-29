@@ -1,0 +1,409 @@
+{
+    "namespace": "hud_modules",
+    /*"fps_counter": {
+        "type": "custom",
+        "renderer": "paper_doll_renderer",
+        "anchor_to": "top_middle",
+        "anchor_from": "top_middle",
+        "offset": [
+            0,
+            90
+        ],
+        "size": [
+            16,
+            16
+        ]
+    },*/
+    "toggle_panel": {
+        "type": "panel",
+        "$tab_size|default": [
+            "100%",
+            "100%"
+        ],
+        "$sound_name|default": "random.click",
+        "$sound_volume|default": 0,
+        "$sound_pitch|default": 1.0,
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "$radio_toggle_group": true,
+        "$toggle_focus_enabled": true,
+        "$is_back_button|default": false,
+        "$has_double_click_function|default": true,
+        "$binding_type": "global",
+        "$binding_condition": "t",
+        "$is_custom_button|default": true,
+        "$custom_from_button_id|default": "",
+        "$custom_to_button_id|default": "",
+        "$custom_mapping_type|default": "global",
+        "$custom_scope|default": "",
+        "$unchecked_control": "common.empty_panel",
+        "$checked_control": "common.empty_panel",
+        "$unchecked_hover_control": "common.empty_panel",
+        "$checked_hover_control": "common.empty_panel",
+        "$unchecked_locked_control": "common.empty_panel",
+        "$unchecked_locked_hover_control": "common.empty_panel",
+        "$checked_locked_control": "common.empty_panel",
+        "$checked_locked_hover_control": "common.empty_panel",
+        "controls": [
+            {
+                "$tab_view_binding_name@common.toggle": {
+                    "sound_name": "$sound_name",
+                    "sound_volume": "$sound_volume",
+                    "sound_pitch": "$sound_pitch",
+                    "size": "$tab_size",
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        },
+                        {
+                            "from_button_id": "button.menu_ok",
+                            "to_button_id": "button.menu_ok",
+                            "mapping_type": "focused"
+                        },
+                        {
+                            "ignored": "(not $is_back_button)",
+                            "from_button_id": "button.menu_cancel",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "global"
+                        },
+                        {
+                            "ignored": "(not $is_custom_button)",
+                            "from_button_id": "$custom_from_button_id",
+                            "to_button_id": "$custom_to_button_id",
+                            "mapping_type": "$custom_mapping_type",
+                            "scope": "$custom_scope"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "toggle_panel_double": {
+        "type": "panel",
+        "$tab_size|default": [
+            "100%",
+            "100%"
+        ],
+        "$sound_name|default": "random.click",
+        "$sound_volume|default": 1.0,
+        "$sound_pitch|default": 1.0,
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "$radio_toggle_group": true,
+        "$toggle_focus_enabled": true,
+        "$is_back_button|default": false,
+        "$has_double_click_function|default": true,
+        "$binding_type": "global",
+        "$binding_condition": "t",
+        "$is_custom_button|default": true,
+        "$custom_from_button_id|default": "",
+        "$custom_to_button_id|default": "",
+        "$custom_mapping_type|default": "global",
+        "$custom_scope|default": "",
+        "$unchecked_control": "common.empty_panel",
+        "$checked_control": "common.empty_panel",
+        "$unchecked_hover_control": "common.empty_panel",
+        "$checked_hover_control": "common.empty_panel",
+        "$unchecked_locked_control": "common.empty_panel",
+        "$unchecked_locked_hover_control": "common.empty_panel",
+        "$checked_locked_control": "common.empty_panel",
+        "$checked_locked_hover_control": "common.empty_panel",
+        "controls": [
+            {
+                "$tab_view_binding_name@common.toggle": {
+                    "sound_name": "$sound_name",
+                    "sound_volume": "$sound_volume",
+                    "sound_pitch": "$sound_pitch",
+                    "size": "$tab_size",
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "double_pressed"
+                        },
+                        {
+                            "from_button_id": "button.menu_ok",
+                            "to_button_id": "button.menu_ok",
+                            "mapping_type": "focused"
+                        },
+                        {
+                            "ignored": "(not $is_back_button)",
+                            "from_button_id": "button.menu_cancel",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "global"
+                        },
+                        {
+                            "ignored": "(not $is_custom_button)",
+                            "from_button_id": "$custom_from_button_id",
+                            "to_button_id": "$custom_to_button_id",
+                            "mapping_type": "$custom_mapping_type",
+                            "scope": "$custom_scope"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "base_toggle": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "texture": "$texture",
+        "$texture|default": "",
+        "$offset|default": "",
+        "$text_color|default": [
+            1,
+            1,
+            1
+        ],
+        "layer": 2,
+        "controls": [
+            {
+                "label": {
+                    "type": "label",
+                    "font_type": "smooth",
+                    "text": "$button_text",
+                    "offset": "$offset",
+                    "color": "$text_color",
+                    "layer": 3
+                }
+            }
+        ]
+    },
+    "toggle@hud_modules.toggle_panel": {
+        "$unchecked_control": "hud_modules.toggle_unchecked_control",
+        "$checked_control": "hud_modules.toggle_checked_control",
+        "$unchecked_hover_control": "hud_modules.toggle_unchecked_hover_control",
+        "$checked_hover_control": "hud_modules.toggle_checked_control"
+    },
+    "toggle_double@hud_modules.toggle_panel_double": {
+        "$unchecked_control": "hud_modules.toggle_unchecked_control",
+        "$checked_control": "hud_modules.toggle_checked_control",
+        "$unchecked_hover_control": "hud_modules.toggle_unchecked_hover_control",
+        "$checked_hover_control": "hud_modules.toggle_checked_control"
+    },
+    "toggle_unchecked_control@base_toggle": {
+        "$texture": "textures/chyves/ui/medium-gray"
+    },
+    "toggle_checked_control@base_toggle": {
+        "$texture": "textures/chyves/ui/light-gray"
+    },
+    "toggle_unchecked_hover_control@base_toggle": {
+        "$texture": "textures/chyves/ui/dark-gray"
+    },
+    "open_toggles": {
+        "type": "stack_panel",
+        "size": [
+            "100%c",
+            24
+        ],
+        "offset": [
+            5,
+            5
+        ],
+        "orientation": "horizontal",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "controls": [
+            {
+                "module@hud_modules.toggle_double": {
+                    "size": [
+						96,
+						24
+					],
+                    "$unchecked_control": "",
+                    "$unchecked_hover_control": "",
+					"$button_text": "",
+					"$toggle_group_forced_index": 2,
+					"$default_selector_toggle_index": 1,
+                    "$radio_toggle_group": false,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu2",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+					"$toggle_name": "show_panel_button",
+                    "$tab_view_binding_name": "chyves_hide_menu"
+                }
+            },
+            {
+				"buffer": {
+					"type": "panel",
+					"size": [102, 24],
+					"bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu2",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			},
+            {
+				"edit_menu@hud_modules.toggle_double": {
+					"size": [
+						96,
+						24
+					],
+					"$unchecked_control": "",
+                    "$unchecked_hover_control": "",
+					"$button_text": "",
+					"$tab_view_binding_name": "chyves_hide_menu2",
+                    "$toggle_name": "show_panel_button",
+                    "$toggle_group_forced_index": 3,
+                    "$toggle_group_default_selected": "$default_selector_toggle_index",
+                    "$default_selector_toggle_index": 1,
+                    "$radio_toggle_group": false,
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu",
+                            "source_property_name": "(not #toggle_state)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+				}
+			}
+        ]
+    },
+    "hud_menu": {
+        "type": "panel",
+        "size": [
+            "65%",
+            "55%x"
+        ],
+        "layer": 999,
+        "controls": [
+            {
+                "outline@hud_modules.hud_menu_outline": {}
+            },
+            {
+                "bg@hud_modules.hud_menu_bg": {}
+            },
+            {
+                "content@hud_modules.hud_menu_content": {}
+            }
+        ]
+    },
+    "hud_menu_outline": {
+        "type": "image",
+        "texture": "textures/chyves/ui/outline",
+        "size": [
+            "100% + 2px",
+            "100% + 2px"
+        ],
+        "layer": 997
+    },
+    "hud_menu_bg": {
+        /*"type": "image",
+        "texture": "textures/chyves/ui/medium-gray",
+        */
+        "type": "custom",
+        "renderer": "gradient_renderer",
+        "gradient_direction": "vertical",
+        "color1": "$bp_menu_bg_color",
+        "color2": "$bp_menu_bg_color",
+        "size": [
+            "100%",
+            "100%"
+        ],
+
+        "layer": 998
+    },
+    "hud_menu_tabs_bg": {
+        "type": "image",
+        "texture": "textures/chyves/ui/dark-gray",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1001
+    },
+    "hud_menu_vertical_divider": {
+        "type": "image",
+        "texture": "textures/chyves/ui/divider",
+        "size": [
+            "2px",
+            "100%"
+        ],
+        "layer": 1002
+    },
+    "hud_menu_content": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1000,
+        "controls": [
+            {
+                "hud_menu_tabs@hud_modules.hud_menu_tabs": {}
+            },
+            {
+                "d1@hud_modules.hud_menu_vertical_divider": {}
+            },
+            {
+                "hud_menu_main_content@hud_modules.hud_menu_main_content": {}
+            }
+        ]
+    },
+    "hud_menu_tabs": {
+        "type": "panel",
+        "size": [
+            "30% - 1px",
+            "100%"
+        ],
+        "layer": 1003,
+        "controls": [
+            {
+                "bg@hud_modules.hud_menu_tabs_bg": {}
+            }
+        ]
+    },
+    "hud_menu_main_content": {
+        "type": "panel",
+        "size": [
+            "70% - 1px",
+            "100%"
+        ],
+        "layer": 1003,
+        "controls": []
+    },
+    "hud_modules_panel": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            /*{
+                "fps@hud_modules.fps_counter": {}
+            },*/
+            {
+                "hud_menu@hud_modules.hud_menu": {
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "chyves_hide_menu",
+                            "source_property_name": "#toggle_state",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

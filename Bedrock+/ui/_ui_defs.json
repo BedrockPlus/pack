@@ -1,0 +1,7 @@
+{
+    "ui_defs": [
+        "ui/hud_modules.json",
+        "configs/modules.json",
+        "configs/theme.json"
+    ]
+}
